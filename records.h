@@ -3,9 +3,12 @@ typedef struct record {
     char profession[50];
     char place[50];
     char number[50];
+    struct record *next;
 } Record;
-void input(FILE *fp,char *content, Record records[], int *n);
+Record* input(FILE *fp,char *content, Record *start);
 void split(char string[], char content[], char separation);
 void delete_string (char content[], char separation);
+void print_list(Record *start);
+void add_data(char data1[], char data2[], char data3[], char data4[], Record *start);
 int check(char c);
 int search(Record record, char word[]);

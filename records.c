@@ -4,25 +4,75 @@
 #include "records.h"
 #include <locale.h>
 
+void add_data(char data1[], char data2[], char data3[], char data4[], Record *start)
+{
+    Record *iter, *uj;
+    uj = (Record*)malloc(sizeof(Record));
+    strcpy(uj->name,data1);strcpy(uj->profession,data2);strcpy(uj->place,data3);strcpy(uj->number,data4);
+    uj->next=NULL;
+    for (iter=start;iter->next!=NULL;iter=iter->next);
+    iter->next=uj;
+}
 
+Record* input(FILE *fp, char *content, Record *start){
 
-void input(FILE *fp,char *content, Record records[], int *n){
+    Record *uj;
 
-    //FILE *fp;
-    //fopen("database.txt","r");
-    int i=0;
+    //fp=fopen("database.txt","r");
+
     while (!feof(fp))
         {
+            if (start==NULL)
+            {
+                    fgets(content,100,fp);
+
+                    uj = (Record*)malloc(sizeof(Record));
+
+                    split(uj->name,content,':');
+                   // puts(uj->name);
+                    split(uj->profession,content,':');
+                   // puts(uj->profession);
+                    split(uj->place,content,':');
+                    //puts(uj->place);
+                    split(uj->number,content,':');
+                    //puts(uj->number);
+                    uj->next=NULL;
+                    start=uj;
+
+            }
 
             fgets(content,100,fp);
             content [strlen(content)+1]=0;
-            split(&(records[i].name), content, ':');
-            split(&(records[i].profession), content, ':');
-            split(&(records[i].place),content, ':');
-            split(&(records[i].number),content, ':');
-            i++;
-        }
-        *n=i-1;
+            /*if (start->next==0)
+            {
+                split(start->name,content,':');
+                split(start->profession,content,':');
+                split(start->place,content,':');
+                split(start->number,content,':');
+
+            }*/
+            uj = (Record*)malloc(sizeof(Record));
+
+            char name[100],prof[100],place[100],numb[100];
+
+            split(name,content,':');
+            //add_data(temp,"name",start);
+            //puts(temp);
+            split(prof,content,':');
+            //add_data(temp,"profession",start);
+            //puts(temp);
+            split(place,content,':');
+            //add_data(temp,"place",start);
+            //puts(temp);
+            split(numb,content,':');
+            add_data(name,prof,place,numb,start);
+
+            //iter->next=uj;
+            //uj->next=NULL;
+
+       }
+
+    return start;
 }
 void split(char string[], char content[], char separation){
     char temp[100]="";
@@ -49,6 +99,14 @@ void split(char string[], char content[], char separation){
     delete_string(content,separation);
 
 
+}
+void print_list(Record *start)
+{
+    Record *iter;
+    for (iter = start; iter!=NULL; iter = iter->next)
+    {
+        printf("%s:%s:%s:%s\n",iter->name,iter->profession,iter->place,iter->number);
+    }
 }
 void delete_string (char content[], char separation){
     char temp[100]="";
