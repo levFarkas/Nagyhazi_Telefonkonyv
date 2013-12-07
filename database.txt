@@ -1,9 +1,8 @@
-Farkas Levente:tûzoltó:Tiszaújváros:06704256091
-Dr. Dezsõfi Aurél:szexológus:Szekszárd:06303874231
-Zsíros B. Ödön:kõmûves:Vásárosnamély:06207234521
-Petõfi József:lecsúszott költõ:Nagyvárad:06708923418
-Winch Eszter:titkárnõ:Washington:1202748214
-Hoch Vladimir:német-orosz-magyar nagykövet:Gyõr:06704325134
-Oswath István:képviselõ:Budapest:06202452554
-Lakatos Rómeó:helyi vajda:Temesvár:405294134
-Takács Dávid:valaki:Budapest:203432378
+Farkas Levente:tuzolto:Tiszaujvaros:06704256091
+Dr. Dezsofi Aurel:szexologus:Szekszard:06303874231
+Zsíros B. Odon:komuves:Vasarosnamely:06207234521
+Petofi József:lecsuszott kolto:Nagyvarad:06708923418
+Winch Eszter:titkárno:Washington:1202748214
+Hoch Vladimir:nemet-orosz-magyar nagykovet:Gyor:06704325134
+Oswath Istvan:kepviselo:Budapest:06202452554
+Lakatos Romeo:helyi vajda:Temesvar:405294134
